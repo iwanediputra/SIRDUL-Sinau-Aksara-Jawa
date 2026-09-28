@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SUSUN AKSARA - Dolanan Sinau Aksara Jawa</title>
+    <meta name="description" content="Gim Edukasi Sinau Aksara Jawa Interaktif kanggo siswa SD kanthi mode dolanan, kamus aksara, lan dashboard guru.">
+    <meta property="og:title" content="SUSUN AKSARA - Dolanan Sinau Aksara Jawa">
+    <meta property="og:description" content="Gim Edukasi Sinau Aksara Jawa Interaktif kanggo siswa SD kanthi mode dolanan, kamus aksara, lan dashboard guru.">
     <!-- Google Fonts: Noto Sans Javanese for authentic Unicode rendering, Fredoka for child-friendly headings, Plus Jakarta Sans for body -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -534,6 +537,7 @@
                     <button onclick="app.saveSchoolName()" class="bg-teal-600 hover:bg-teal-500 text-white font-fredoka text-xs px-5 py-2.5 rounded-xl shadow-3d-teal transition">
                         Simpan Identitas
                     </button>
+                    <span id="schoolSaveFeedback" class="hidden text-xs text-teal-700 font-bold flex items-center gap-1"><i class="fa-solid fa-circle-check text-teal-600"></i> Kasimpen!</span>
                 </div>
             </div>
 
@@ -1370,7 +1374,11 @@
                 if (val) {
                     this.state.schoolName = val;
                     document.getElementById('schoolBadgeHeader').textContent = val;
-                    alert('Identitas Sekolah kasil disimpen!');
+                    const feedback = document.getElementById('schoolSaveFeedback');
+                    if (feedback) {
+                        feedback.classList.remove('hidden');
+                        setTimeout(() => feedback.classList.add('hidden'), 3000);
+                    }
                 }
             }
 

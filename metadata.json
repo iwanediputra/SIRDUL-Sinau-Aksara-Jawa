@@ -1,0 +1,8 @@
+{
+  "name": "SUSUN AKSARA - Dolanan Sinau Aksara Jawa",
+  "description": "Gim Edukasi Sinau Aksara Jawa Interaktif kanggo siswa SD kanthi mode dolanan, kamus aksara, lan dashboard guru.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
